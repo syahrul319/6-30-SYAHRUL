@@ -13,12 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+Route::get('/', function () {
+    return view('home', [
+        "title" => "Home"
+    ]);
+});
 
 Route::get('/about', function () {
-    return view('about', [
+    return view('about' , [
+        "title" => "About",
         "nama" => "Syahrul Romadhoni",
-        "email"=> "3103120216@student.smktelkom-pwt.sch.id",
+        "email" => "3103120216@gmail.com",
         "gambar" => "30_SYAHRUL ROMADHONI.jpg"
+    ]);
+});
+
+Route::get('/gallery', function () {
+    return view('gallery', [
+        "title" => "Gallery"
     ]);
 });
